@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    tools:context=".Library">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txt_rm1"
+            android:layout_width="57dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/gotham_bold"
+            android:text="Rm: 98175"
+            android:textColor="#B3B3B3"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_clara" />
+
+        <TextView
+            android:id="@+id/txt_rm2"
+            android:layout_width="71dp"
+            android:layout_height="14dp"
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/gotham_bold"
+            android:text="Rm: 551805"
+            android:textColor="#B3B3B3"
+            android:textSize="10sp"
+            app:layout_constraintStart_toEndOf="@+id/txt_rm1"
+            app:layout_constraintTop_toBottomOf="@+id/txt_gui" />
+
+        <TextView
+            android:id="@+id/txt_rm3"
+            android:layout_width="70dp"
+            android:layout_height="11dp"
+            android:layout_marginStart="74dp"
+            android:layout_marginEnd="72dp"
+            android:fontFamily="@font/gotham_bold"
+            android:text="Rm: 550334"
+            android:textColor="#B3B3B3"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txt_rm2"
+            app:layout_constraintTop_toBottomOf="@+id/txt_batista" />
+
+        <TextView
+            android:id="@+id/txt_batista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/gotham_bold"
+            android:text="Pedro Batista"
+            android:textColor="#E8E8E8"
+            android:textSize="10sp"
+            app:layout_constraintStart_toEndOf="@+id/txt_gui"
+            app:layout_constraintTop_toBottomOf="@+id/cardView11" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="155dp"
+            android:layout_height="25dp"
+            android:layout_gravity="top|start"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="53dp"
+            android:layout_marginBottom="26dp"
+            android:fontFamily="@font/gotham_bold"
+            android:lineSpacingExtra="10sp"
+            android:text="Sua Biblioteca"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/Playlists"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/Artistas"
+            android:layout_width="98dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="104dp"
+            android:layout_marginEnd="6dp"
+            android:backgroundTint="#212121"
+            android:fontFamily="@font/gotham_bold"
+            android:text="Artistas"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toStartOf="@+id/Baixado"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/Albuns"
+            android:layout_width="98dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="6dp"
+            android:backgroundTint="#212121"
+            android:fontFamily="@font/gotham_bold"
+            android:text="Álbuns"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toStartOf="@+id/Artistas"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <Button
+            android:id="@+id/Baixado"
+            android:layout_width="98dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="#212121"
+            android:fontFamily="@font/gotham_bold"
+            android:text="Baixado"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+        <Button
+            android:id="@+id/Playlists"
+            android:layout_width="98dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#212121"
+            android:fontFamily="@font/gotham_bold"
+            android:text="Playlists"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toStartOf="@+id/Albuns"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="176dp"
+            android:layout_marginTop="51dp"
+            android:layout_marginBottom="22dp"
+            android:src="@drawable/baseline_white_search_24"
+            app:layout_constraintBottom_toTopOf="@+id/Baixado"
+            app:layout_constraintStart_toEndOf="@+id/textView12"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="46dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="51dp"
+            android:layout_marginEnd="13dp"
+            android:src="@drawable/baseline_add_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="22dp"
+            android:src="@drawable/baseline_import_export_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Playlists" />
+
+        <TextView
+            android:id="@+id/txt_recentes"
+            android:layout_width="89dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/gotham_bold"
+            android:text="Recentes"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView11"
+            app:layout_constraintTop_toBottomOf="@+id/Playlists" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="272dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="6dp"
+            android:src="@drawable/baseline_view_headline_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txt_recentes"
+            app:layout_constraintTop_toBottomOf="@+id/Baixado" />
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="127dp"
+            android:layout_height="124dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="36dp"
+            android:src="@drawable/clara"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_recentes" />
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="127dp"
+            android:layout_height="124dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="89dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/gui"
+            app:layout_constraintEnd_toStartOf="@+id/cardView11"
+            app:layout_constraintStart_toEndOf="@+id/imageView14"
+            app:layout_constraintTop_toBottomOf="@+id/Artistas" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView11"
+            android:layout_width="127dp"
+            android:layout_height="124dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView13">
+
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/batista" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txt_clara"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/gotham_bold"
+            android:text="Clara Barreto"
+            android:textColor="#E8E8E8"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView14" />
+
+        <TextView
+            android:id="@+id/txt_gui"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="77dp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/gotham_bold"
+            android:text="Guilherme Magalhães"
+            android:textColor="#E8E8E8"
+            android:textSize="10sp"
+            app:layout_constraintStart_toEndOf="@+id/txt_clara"
+            app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
