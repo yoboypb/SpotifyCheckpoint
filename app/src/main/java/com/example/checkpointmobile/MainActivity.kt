@@ -1,12 +1,9 @@
 package com.example.checkpointmobile
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import com.example.checkpointmobile.bancodedados.DatabaseHelper
 import com.example.checkpointmobile.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -34,6 +31,7 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
 
     }
 

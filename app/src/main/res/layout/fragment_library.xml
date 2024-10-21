@@ -26,44 +26,29 @@
             app:layout_constraintTop_toBottomOf="@+id/txt_clara" />
 
         <TextView
-            android:id="@+id/txt_rm2"
-            android:layout_width="71dp"
-            android:layout_height="14dp"
-            android:layout_marginStart="88dp"
-            android:layout_marginTop="2dp"
-            android:fontFamily="@font/gotham_bold"
-            android:text="Rm: 551805"
-            android:textColor="#B3B3B3"
-            android:textSize="10sp"
-            app:layout_constraintStart_toEndOf="@+id/txt_rm1"
-            app:layout_constraintTop_toBottomOf="@+id/txt_gui" />
-
-        <TextView
             android:id="@+id/txt_rm3"
             android:layout_width="70dp"
             android:layout_height="11dp"
-            android:layout_marginStart="74dp"
-            android:layout_marginEnd="72dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="179dp"
             android:fontFamily="@font/gotham_bold"
             android:text="Rm: 550334"
             android:textColor="#B3B3B3"
             android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/txt_rm2"
             app:layout_constraintTop_toBottomOf="@+id/txt_batista" />
 
         <TextView
             android:id="@+id/txt_batista"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/gotham_bold"
             android:text="Pedro Batista"
             android:textColor="#E8E8E8"
             android:textSize="10sp"
-            app:layout_constraintStart_toEndOf="@+id/txt_gui"
-            app:layout_constraintTop_toBottomOf="@+id/cardView11" />
+            app:layout_constraintTop_toBottomOf="@+id/cardView11"
+            tools:layout_editor_absoluteX="200dp" />
 
         <TextView
             android:id="@+id/textView12"
@@ -207,25 +192,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_recentes" />
 
-        <ImageView
-            android:id="@+id/imageView15"
-            android:layout_width="127dp"
-            android:layout_height="124dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="89dp"
-            android:layout_marginEnd="16dp"
-            android:src="@drawable/gui"
-            app:layout_constraintEnd_toStartOf="@+id/cardView11"
-            app:layout_constraintStart_toEndOf="@+id/imageView14"
-            app:layout_constraintTop_toBottomOf="@+id/Artistas" />
-
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView11"
             android:layout_width="127dp"
             android:layout_height="124dp"
             android:layout_marginTop="36dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="64dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView14"
             app:layout_constraintTop_toBottomOf="@+id/imageView13">
 
             <ImageView
@@ -249,18 +223,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView14" />
 
-        <TextView
-            android:id="@+id/txt_gui"
+        <Button
+            android:id="@+id/btnAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="77dp"
-            android:layout_marginTop="14dp"
-            android:fontFamily="@font/gotham_bold"
-            android:text="Guilherme Magalhães"
-            android:textColor="#E8E8E8"
-            android:textSize="10sp"
-            app:layout_constraintStart_toEndOf="@+id/txt_clara"
-            app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+            android:layout_marginTop="80dp"
+            android:backgroundTint="#1DB954"
+            android:text="Página desenvolvedor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.48"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_rm3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
