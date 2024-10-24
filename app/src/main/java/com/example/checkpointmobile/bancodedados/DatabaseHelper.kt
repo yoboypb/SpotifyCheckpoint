@@ -4,28 +4,31 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
+import kotlin.time.Duration
 
 class DatabaseHelper(context:Context) : SQLiteOpenHelper(
-    //1.Context
-    //2.Nome do banco de dados
-    //3.CursorFactory
-    //4.versão
 
-    context,"loja",null,1
+    context,"biblioteca",null,1
 ) {
     companion object{
-        const val TABELA_PRODUTOS = "produtos"
-        const val ID_PRODUTO = "id_produto"
+        const val TABELA_MUSICAS = "musicas"
+        const val ID_MUSICA = "id_musica"
         const val TITULO = "titulo"
-        const val DESCRICAO = "descricao"
+        const val ARTISTA = "artista"
+        const val GRAVADORA = "gravadora"
+        const val DURACAO = "duracao"
+        const val GENERO = "genero"
 
     }
     override fun onCreate(db: SQLiteDatabase?) {
         //É executado um única vez, quando o app é instalado
-        val sql = "CREATE TABLE IF NOT EXISTS $TABELA_PRODUTOS(" +
-                "$ID_PRODUTO INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+        val sql = "CREATE TABLE IF NOT EXISTS $TABELA_MUSICAS(" +
+                "$ID_MUSICA INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                 "$TITULO VARCHAR(100)," +
-                "$DESCRICAO TEXT" +
+                "$ARTISTA TEXT," +
+                "$GRAVADORA TEXT," +
+                "$DURACAO NUMBER(100)," +
+                "$GENERO TEXT" +
                 ");"
 
         try{
@@ -43,28 +46,35 @@ class DatabaseHelper(context:Context) : SQLiteOpenHelper(
         //É executado quando há mudança de versão do banco
 
     }
-    fun getAllProducts(): List<Product> {
-        val productsList = mutableListOf<Product>()
+    fun getAllMusics(): List<Musica> {
+        val musicasList = mutableListOf<Musica>()
         val db = this.readableDatabase
-        val query = "SELECT * FROM $TABELA_PRODUTOS"
+        val query = "SELECT * FROM $TABELA_MUSICAS"
         val cursor = db.rawQuery(query, null)
 
         if (cursor.moveToFirst()) {
             do {
-                val id = cursor.getInt(cursor.getColumnIndexOrThrow(ID_PRODUTO))
+                val id = cursor.getInt(cursor.getColumnIndexOrThrow(ID_MUSICA))
                 val title = cursor.getString(cursor.getColumnIndexOrThrow(TITULO))
-                val description = cursor.getString(cursor.getColumnIndexOrThrow(DESCRICAO))
+                val artist = cursor.getString(cursor.getColumnIndexOrThrow(ARTISTA))
+                val recorder = cursor.getString(cursor.getColumnIndexOrThrow(GRAVADORA))
+                val duration = cursor.getInt(cursor.getColumnIndexOrThrow(DURACAO))
+                val gender = cursor.getString(cursor.getColumnIndexOrThrow(GENERO))
 
-                val product = Product(id, title, description)
-                productsList.add(product)
+
+                val musica = Musica(id, title, artist, recorder, duration, gender)
+                musicasList.add(musica)
             } while (cursor.moveToNext())
         }
         cursor.close()
-        return productsList
+        return musicasList
     }
 }
-data class Product(
+data class Musica(
     val id: Int,
     val title: String,
-    val description: String
+    val artist: String,
+    val recorder: String,
+    val duration: Int,
+    val gender: String
 )

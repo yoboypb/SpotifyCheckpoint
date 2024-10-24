@@ -11,9 +11,8 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.checkpointmobile.bancodedados.DatabaseHelper
-import com.example.checkpointmobile.bancodedados.ProdutoDAO
-import com.example.checkpointmobile.model.Produto
-import java.lang.Exception
+import com.example.checkpointmobile.model.Musica
+import com.example.checkpointmobile.bancodedados.MusicaDAO
 
 class MainActivity2 : AppCompatActivity() {
 
@@ -21,14 +20,19 @@ class MainActivity2 : AppCompatActivity() {
         DatabaseHelper(this)
     }
     private lateinit var recyclerView: RecyclerView
-    private lateinit var productAdapter: ProductAdapter
+    private lateinit var musicaAdapter: MusicaAdapter
     private lateinit var btnSalvar: Button
     private lateinit var btnListar: Button
     private lateinit var btnAtualizar: Button
     private lateinit var btnDeletar: Button
-    private lateinit var editNomeProduto: EditText
+    private lateinit var editNomeMusica: EditText
+    private lateinit var editNomeArtista: EditText
+    private lateinit var editDuracao: EditText
+    private lateinit var editNomeGravadora: EditText
+    private lateinit var editGenero: EditText
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+
+override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main2)
@@ -43,15 +47,20 @@ class MainActivity2 : AppCompatActivity() {
         btnListar = findViewById(R.id.btnListar)
         btnAtualizar = findViewById(R.id.btnAtualizar)
         btnDeletar = findViewById(R.id.btnDeletar)
-        editNomeProduto = findViewById(R.id.editNomeProduto)
+        editNomeMusica = findViewById(R.id.editNomeMusica)
+        editNomeArtista = findViewById(R.id.editNomeArtista)
+        editGenero = findViewById(R.id.editGenero)
+        editDuracao = findViewById(R.id.editDuracao)
+        editNomeGravadora = findViewById(R.id.editNomeGravadora)
 
-        // Configurar RecyclerView
+
+    // Configurar RecyclerView
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         // Inicializar com uma lista vazia
-        productAdapter = ProductAdapter(emptyList())
-        recyclerView.adapter = productAdapter
+        musicaAdapter = MusicaAdapter(emptyList())
+        recyclerView.adapter = musicaAdapter
 
         // Adicionar eventos aos botões
         btnSalvar.setOnClickListener {
@@ -72,40 +81,49 @@ class MainActivity2 : AppCompatActivity() {
     }
 
     private fun salvar() {
-        val nomeProduto = editNomeProduto.text.toString()
+        val nomeMusica = editNomeMusica.text.toString()
+        val nomeArtista = editNomeArtista.text.toString()
+        val nomeGravadora = editNomeGravadora.text.toString()
+        val Duracao = editDuracao.top
+        val Genero = editGenero.text.toString()
 
-        val produtoDAO = ProdutoDAO(this)
-        val produto = Produto(-1, nomeProduto, "descricao...")
-        produtoDAO.salvar(produto)
+
+        val musicaDAO = MusicaDAO(this)
+        val musica = Musica(-1, nomeMusica, nomeArtista, nomeGravadora, Duracao, Genero)
+        musicaDAO.salvar(musica)
     }
 
     private fun listar() {
-        val produtoDAO = ProdutoDAO(this)
+        val musicaDAO = MusicaDAO(this)
 
         // Obter a lista de produtos
-        val listProduto = produtoDAO.listar()
+        val listMusica = musicaDAO.listar()
 
         // Atualizar o adapter do RecyclerView com a nova lista de produtos
-        productAdapter = ProductAdapter(listProduto)
-        recyclerView.adapter = productAdapter
+        musicaAdapter = MusicaAdapter(listMusica)
+        recyclerView.adapter = musicaAdapter
 
-        if (listProduto.isNotEmpty()) {
-            listProduto.forEach { produto ->
-                Log.i("db_info", "${produto.idProduto} - ${produto.titulo} - ${produto.descricao}")
+        if (listMusica.isNotEmpty()) {
+            listMusica.forEach { musica ->
+                Log.i("db_info", "${musica.idMusica} - ${musica.titulo} - ${musica.artista}")
             }
         }
     }
 
     private fun atualizar() {
-        val nomeProduto = editNomeProduto.text.toString()
+        val nomeMusica = editNomeMusica.text.toString()
+        val nomeArtista = editNomeArtista.text.toString()
+        val nomeGravadora = editNomeGravadora.text.toString()
+        val Duracao = editDuracao.top
+        val Genero = editGenero.text.toString()
 
-        val produtoDAO = ProdutoDAO(this)
-        val produto = Produto(-1, nomeProduto, "descricao...")
-        produtoDAO.atualizar(produto)
+        val musicaDAO = MusicaDAO(this)
+        val musica = Musica(-1, nomeMusica, nomeArtista, nomeGravadora, Duracao, Genero)
+        musicaDAO.atualizar(musica)
     }
 
     private fun deletar() {
-        val produtoDAO = ProdutoDAO(this)
-        produtoDAO.remover(3)
+        val musicaDAO = MusicaDAO(this)
+        musicaDAO.remover(1)
     }
 }
