@@ -3,7 +3,6 @@ package com.example.checkpointmobile
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.checkpointmobile.bancodedados.DatabaseHelper
 import com.example.checkpointmobile.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

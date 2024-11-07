@@ -5,10 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.content.Intent
-import android.widget.Button
 
-import com.example.checkpointmobile.bancodedados.DatabaseHelper
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -41,15 +39,6 @@ class Library : Fragment() {
         val view = inflater.inflate(R.layout.fragment_library, container, false)
 
         // Encontrar o botão btnAdd no layout
-        val btnAdd: Button = view.findViewById(R.id.btnAdd)
-
-        // Configurar o listener de clique no botão
-        btnAdd.setOnClickListener {
-            // Criar um Intent para iniciar a MainActivity2
-            val intent = Intent(activity, MainActivity2::class.java)
-            startActivity(intent)
-        }
-
         return view
     }
 }

@@ -14,12 +14,12 @@
 
         <TextView
             android:id="@+id/txt_rm1"
-            android:layout_width="57dp"
-            android:layout_height="15dp"
+            android:layout_width="70dp"
+            android:layout_height="14dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="2dp"
             android:fontFamily="@font/gotham_bold"
-            android:text="Rm: 98175"
+            android:text="Rm: 551857"
             android:textColor="#B3B3B3"
             android:textSize="10sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +30,7 @@
             android:layout_width="70dp"
             android:layout_height="11dp"
             android:layout_marginTop="4dp"
-            android:layout_marginEnd="179dp"
+            android:layout_marginEnd="148dp"
             android:fontFamily="@font/gotham_bold"
             android:text="Rm: 550334"
             android:textColor="#B3B3B3"
@@ -43,12 +43,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="148dp"
             android:fontFamily="@font/gotham_bold"
             android:text="Pedro Batista"
             android:textColor="#E8E8E8"
             android:textSize="10sp"
-            app:layout_constraintTop_toBottomOf="@+id/cardView11"
-            tools:layout_editor_absoluteX="200dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView11" />
 
         <TextView
             android:id="@+id/textView12"
@@ -188,7 +189,7 @@
             android:layout_height="124dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="36dp"
-            android:src="@drawable/clara"
+            android:src="@drawable/rafaela"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_recentes" />
 
@@ -217,23 +218,11 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="14dp"
             android:fontFamily="@font/gotham_bold"
-            android:text="Clara Barreto"
+            android:text="Rafaela Rodrigues"
             android:textColor="#E8E8E8"
             android:textSize="10sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView14" />
-
-        <Button
-            android:id="@+id/btnAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:backgroundTint="#1DB954"
-            android:text="Página desenvolvedor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.48"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_rm3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
